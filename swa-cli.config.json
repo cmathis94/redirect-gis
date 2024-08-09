@@ -2,7 +2,7 @@
   "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
   "configurations": {
     "redirect-gis": {
-      "appLocation": ".",
+      "appLocation": "src",
       "outputLocation": "."
     }
   }
