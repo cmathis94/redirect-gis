@@ -4,25 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=https://gis-georgetowntx.hub.arcgis.com/">
+    <meta http-equiv="refresh" content="5; url=https://gis-georgetowntx.hub.arcgis.com/">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
-    <title>Document</title>
+    <style>
+        .navBar {
+            height: 50px;
+            width: 100%;
+            background-color: rgb(151, 39, 44);
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .sml {
+            padding: 0.5rem;
+            margin: 0.5rem 0.25rem;
+            background: rgb(182, 101, 103);
+            border-radius: 50%;
+        }
+
+        #img {
+            max-width: 35%;
+        }
+
+        #noRedirect {
+            display: none;
+        }
+    </style>
+
+    <title>Maps-Georgetown, TX</title>
 </head>
 
 <body class="vh-100">
-    <div class="container text-center h-100">
-        <div class="row justify-content-center align-items-center h-100">
-            <div class="col">
-                <h1 class="m-0">YOU WILL BE REDIRECTED SHORTLY</h1>
+    <div class="d-flex flex-column justify-content-between">
+        <div class="navBar">
+            <div style="margin: 0 2em 0 0; display: flex;">
+                <a href="https://signup.e2ma.net/signup/1756517/1734270/?v=a" class="sml" target="_blank"><img
+                        src="../assets/imgs/newsletter6-24-24.png" alt="newsletter"></a>
+                <a href="http://www.facebook.com/CityofGeorgetown" class="sml" target="_blank"><img
+                        src="../assets/imgs/facebook-app-symbol.png" alt="facebook"></a>
+                <a href="https://www.instagram.com/georgetowntx" class="sml" target="_blank"><img
+                        src="../assets/imgs/instagram%20(1).png" alt="instagram"></a>
+                <a href="http://www.twitter.com/georgetowntx" class="sml" target="_blank"><img
+                        src="../assets/imgs/twitter.png" alt="twitter"></a>
+                <a href="http://www.youtube.com/user/TheCityofGeorgetown" class="sml" target="_blank"><img
+                        src="../assets/imgs/youtube.png" alt="YouTube"></a>
             </div>
         </div>
+        <div class="container">
+
+            <div class="row text-center align-items-center">
+                <div class="col"><img src="../assets/imgs/GeorgetownTX_Logo[Primary-Tagline]RGB.png"
+                        alt="Georgetown Logo - More Than Welcome" id="img" class="img-fluid"></div>
+            </div>
+            <div class="row text-center">
+                <div class="col-12">
+                    <h3 class="h3">The City of Georgetown website has moved</h3>
+                    <h5 class="h5">You will be redirected to <a
+                            href="https://georgetowntexas.gov">georgetowntexas.gov</a> in <span id="seconds">5</span>
+                    </h5>
+                    <p id="noRedirect">If you were not redirected, please click <a
+                            href="https://gis-georgetowntx.hub.arcgis.com/">here</a>.</p>
+                </div>
+            </div>
+
+        </div>
+        <div id="footer" class="footer fixed-bottom">
+            <img src="../assets/imgs/border-footer.png" alt="Georgetown Footer" class="img-fluid">
+        </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script>
+        // Countdown timer
+        let timeLeft = 5;
+
+        async function countdown() {
+            timeLeft--;
+            document.getElementById("seconds").innerHTML = String(timeLeft);
+            if (timeLeft > 0) {
+                setTimeout(countdown, 1000);
+            }
+        }
+
+        function redirection() {
+            document.getElementById("noRedirect").style.display = "block";
+        }
+
+        setTimeout(redirection, 6000);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            setTimeout(countdown, 1000);
+        });
+    </script>
 </body>
+
 
 </html>
